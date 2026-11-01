@@ -1,36 +1,19 @@
-const languageButtons = document.querySelectorAll(".lang");
-const translatable = document.querySelectorAll("[data-en][data-az]");
-const nav = document.querySelector(".nav");
-const menuToggle = document.querySelector(".menu-toggle");
-
-function setLanguage(lang) {
+const menuButton = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.nav');
+menuButton.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  menuButton.setAttribute('aria-expanded', String(open));
+});
+document.querySelectorAll('.nav a').forEach(link => link.addEventListener('click', () => {
+  nav.classList.remove('open');
+  menuButton.setAttribute('aria-expanded', 'false');
+}));
+document.querySelectorAll('.lang').forEach(button => button.addEventListener('click', () => {
+  const lang = button.dataset.lang;
   document.documentElement.lang = lang;
-  document.body.classList.toggle("lang-az", lang === "az");
-  translatable.forEach((el) => {
-    el.textContent = el.dataset[lang];
+  document.querySelectorAll('.lang').forEach(item => item.classList.toggle('active', item === button));
+  document.querySelectorAll('[data-en]').forEach(item => {
+    const value = item.dataset[lang];
+    if (value) item.textContent = value;
   });
-  languageButtons.forEach((button) => {
-    const active = button.dataset.lang === lang;
-    button.classList.toggle("active", active);
-    button.setAttribute("aria-pressed", String(active));
-  });
-  document.title = lang === "az"
-    ? "Şahnaz Şahbazova — Akademik Portfolio"
-    : "Şahnaz Şahbazova — Academic Portfolio";
-}
-
-languageButtons.forEach((button) => {
-  button.addEventListener("click", () => setLanguage(button.dataset.lang));
-});
-
-menuToggle.addEventListener("click", () => {
-  const isOpen = nav.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
-});
-
-nav.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    nav.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
-  });
-});
+}));

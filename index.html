@@ -1,115 +1,353 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Academic portfolio concept for Şahnaz Şahbazova, UNEC.">
-  <title>Şahnaz Şahbazova — Academic Portfolio</title>
+  <meta name="description"
+    content="Academic profile of Shahnaz N. Shahbazova — soft computing, fuzzy systems and artificial intelligence.">
+  <title>Shahnaz N. Shahbazova | Academic Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <header class="site-header">
-    <a class="wordmark" href="#home">Şahnaz Şahbazova<span>.</span></a>
-    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
-    <nav class="nav" aria-label="Main navigation">
-      <a class="active" href="#home" data-en="Home" data-az="Ana səhifə">Home</a>
-      <a href="#about" data-en="About" data-az="Haqqımda">About</a>
+  <header class="header">
+    <a class="brand" href="#home">Shahnaz Shahbazova<span>.</span></a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="#about" data-en="About" data-az="Haqqında">About</a>
       <a href="#research" data-en="Research" data-az="Tədqiqatlar">Research</a>
-      <a href="#publications" data-en="Publications" data-az="Nəşrlər">Publications</a>
-      <a href="#teaching" data-en="Teaching" data-az="Tədris">Teaching</a>
+      <a href="#career" data-en="Career" data-az="Akademik fəaliyyət">Career</a>
+      <a href="#publications" data-en="Books & publications" data-az="Kitablar və nəşrlər">Books & publications</a>
+      <a href="#service" data-en="Academic service" data-az="Elmi fəaliyyət">Academic service</a>
       <a href="#contact" data-en="Contact" data-az="Əlaqə">Contact</a>
     </nav>
-    <div class="language-switch" aria-label="Choose language">
-      <button class="lang active" data-lang="en">EN</button><span></span><button class="lang" data-lang="az">AZ</button>
-    </div>
+    <div class="lang-switch"><button class="lang active" data-lang="en">EN</button><button class="lang"
+        data-lang="az">AZ</button></div>
   </header>
 
-  <main>
-    <section class="hero section-wrap" id="home">
-      <div class="portrait-wrap">
-        <div class="portrait-placeholder" role="img" aria-label="Placeholder for an approved professional portrait">
-          <img
-            src="images/Sahnazm.jpeg"
-            alt="Professor Şahnaz Şahbazova"
-            class="portrait-image"
-          >
+  <main id="home">
+    <section class="hero wrap">
+      <img src="images/Sahnazm.jpeg" alt="Professor Şahnaz Şahbazova" class="portrait-image">
+      <div class="hero-text">
+        <p class="eyebrow" data-en="ACADEMIC PROFILE · SOFT COMPUTING & ARTIFICIAL INTELLIGENCE"
+          data-az="AKADEMİK PROFİL · SOFT KOMPYUTİNQ VƏ SÜNİ İNTELLEKT">ACADEMIC PROFILE · SOFT COMPUTING & ARTIFICIAL
+          INTELLIGENCE</p>
+        <h1>Shahnaz N.<br>Shahbazova</h1>
+        <div class="gold-line"></div>
+        <p class="role" data-en="Department of Digital Technologies and Applied Informatics"
+          data-az="Rəqəmsal texnologiyalar və tətbiqi informatika kafedrası">Department of Digital Technologies and
+          Applied Informatics</p>
+        <p class="institution" data-en="Azerbaijan State University of Economics (UNEC)"
+          data-az="Azərbaycan Dövlət İqtisad Universiteti (UNEC)">Azerbaijan State University of Economics (UNEC)</p>
+        <p class="intro"
+          data-en="My academic work focuses on soft computing, fuzzy systems, artificial intelligence and intelligent information processing. I have been involved in international research, academic publishing and the organisation of the World Conference on Soft Computing."
+          data-az="Elmi fəaliyyətim soft kompyutinq, qeyri-səlis sistemlər, süni intellekt və intellektual informasiya emalı istiqamətlərini əhatə edir. Beynəlxalq tədqiqatlarda, elmi nəşrlərdə və World Conference on Soft Computing konfransının təşkilində iştirak edirəm.">
+          My academic work focuses on soft computing, fuzzy systems, artificial intelligence and intelligent information
+          processing. I have been involved in international research, academic publishing and the organisation of the
+          World Conference on Soft Computing.</p>
+        <div class="actions">
+          <a class="btn primary" href="#research" data-en="Explore research" data-az="Tədqiqatlara bax">Explore
+            research</a>
+          <a class="btn secondary" href="#publications" data-en="Books & publications"
+            data-az="Kitablar və nəşrlər">Books & publications</a>
         </div>
-        <div class="portrait-backdrop"></div>
-        <div class="portrait-caption" data-en="ACADEMIC PROFILE · UNEC" data-az="AKADEMİK PROFİL · UNEC">ACADEMIC PROFILE · UNEC</div>
+        <p class="micro">UNEC · Baku, Azerbaijan</p>
       </div>
-      <div class="hero-copy">
-        <p class="eyebrow" data-en="PROFESSOR · DIGITAL ECONOMY" data-az="PROFESSOR · RƏQƏMSAL İQTİSADİYYAT">PROFESSOR · DIGITAL ECONOMY</p>
-        <h1>Şahnaz<br class="desktop-break"> Şahbazova</h1>
-        <div class="gold-rule"></div>
-        <p class="affiliation" data-en="Azerbaijan State University of Economics (UNEC)" data-az="Azərbaycan Dövlət İqtisad Universiteti (UNEC)">Azerbaijan State University of Economics (UNEC)</p>
-        <p class="department" data-en="Faculty of Digital Economy · Department of Digital Technologies and Applied Informatics" data-az="Rəqəmsal İqtisadiyyat fakültəsi · Rəqəmsal texnologiyalar və tətbiqi informatika kafedrası">Faculty of Digital Economy · Department of Digital Technologies and Applied Informatics</p>
-        <p class="intro" data-en="My academic interests include artificial intelligence, intelligent information systems, fuzzy methods, and the recognition of visual and audio information." data-az="Elmi maraqlarım süni intellekt, intellektual informasiya sistemləri, qeyri-səlis metodlar, eləcə də vizual və audio informasiyanın tanınması istiqamətlərini əhatə edir.">My academic interests include artificial intelligence, intelligent information systems, fuzzy methods, and the recognition of visual and audio information.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#research" data-en="Explore research" data-az="Tədqiqatlarla tanış olun">Explore research</a>
-          <a class="button button-outline" href="#publications" data-en="View publications" data-az="Elmi nəşrlər">View publications</a>
-        </div>
-        <p class="draft-note" data-en="Concept preview — wording and details to be confirmed." data-az="İlkin konsept — mətn və məlumatlar təsdiqlənməlidir.">Concept preview — wording and details to be confirmed.</p>
-      </div>
-      <div class="decor decor-one"></div><div class="decor decor-two"></div>
     </section>
 
-    <section class="feature-section">
-      <div class="feature-grid section-wrap">
-        <article class="feature-card" id="about">
-          <div class="card-icon" aria-hidden="true">◎</div>
-          <h2 data-en="About" data-az="Haqqımda">About</h2>
-          <p data-en="Academic background, professional experience, and career journey." data-az="Akademik keçmiş, peşəkar təcrübə və karyera yolu.">Academic background, professional experience, and career journey.</p>
-          <a href="#contact" class="text-link" data-en="Learn more ↗" data-az="Ətraflı ↗">Learn more ↗</a>
+    <section class="stats wrap">
+      <div><strong>282</strong><span data-en="Scientific articles" data-az="Elmi məqalə">Scientific articles</span>
+      </div>
+      <div><strong>12</strong><span data-en="Method manuals" data-az="Metodik vəsait">Method manuals</span></div>
+      <div><strong>3</strong><span data-en="Monographs" data-az="Monoqrafiya">Monographs</span></div>
+      <div><strong>12</strong><span data-en="Springer books" data-az="Springer nəşri">Springer books</span></div>
+    </section>
+
+    <section class="section wrap" id="about">
+      <div class="section-heading">
+        <p class="eyebrow">01 / PROFILE</p>
+        <h2 data-en="About" data-az="Haqqında">About</h2>
+      </div>
+      <div class="about-grid">
+        <div>
+          <p class="lead"
+            data-en="Doctor of Sciences in Engineering, with an academic career spanning research, teaching, international collaboration and scientific publishing."
+            data-az="Mühəndislik elmləri doktoru. Elmi fəaliyyəti tədqiqat, tədris, beynəlxalq əməkdaşlıq və elmi nəşrləri əhatə edir.">
+            Doctor of Sciences in Engineering, with an academic career spanning research, teaching, international
+            collaboration and scientific publishing.</p>
+          <p data-en="Since 2011, I have served as General Chair and Organiser of the World Conference on Soft Computing (WConSC), an international conference dedicated to preserving and advancing the scientific heritage of Professor Lotfi A. Zadeh."
+            data-az="2011-ci ildən etibarən professor Lotfi A. Zadehin elmi irsinin qorunmasına və inkişafına həsr olunmuş World Conference on Soft Computing (WConSC) konfransının Baş sədri və təşkilatçısı kimi fəaliyyət göstərirəm.">
+            Since 2011, I have served as General Chair and Organiser of the World Conference on Soft Computing (WConSC),
+            an international conference dedicated to preserving and advancing the scientific heritage of Professor Lotfi
+            A. Zadeh.</p>
+        </div>
+        <aside class="info-card"><span class="card-kicker">ACADEMIC DEGREES</span>
+          <h3>Doctor of Sciences<br>in Engineering</h3>
+          <p>2016 · Azerbaijan Technical University</p>
+          <hr>
+          <h3>PhD in Engineering Sciences</h3>
+          <p>1995 · Azerbaijan Technical University</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section shaded" id="research">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">02 / RESEARCH</p>
+          <h2 data-en="Research interests" data-az="Tədqiqat istiqamətləri">Research interests</h2>
+          <p class="section-intro" data-en="Research themes reflected in the academic profile and doctoral work."
+            data-az="Akademik profildə və doktorluq işində əks olunan tədqiqat istiqamətləri.">Research themes reflected
+            in the academic profile and doctoral work.</p>
+        </div>
+        <div class="research-grid">
+          <article><span>01</span>
+            <h3>Soft Computing</h3>
+            <p data-en="Theory, methods and applications of soft computing."
+              data-az="Soft kompyutinqin nəzəriyyəsi, metodları və tətbiqləri.">Theory, methods and applications of soft
+              computing.</p>
+          </article>
+          <article><span>02</span>
+            <h3>Fuzzy Systems & Fuzzy Neural Networks</h3>
+            <p data-en="Knowledge-based fuzzy neural network models and methods."
+              data-az="Bilik əsaslı qeyri-səlis neyron şəbəkələrinin modelləri və metodları.">Knowledge-based fuzzy
+              neural network models and methods.</p>
+          </article>
+          <article><span>03</span>
+            <h3>Artificial Intelligence</h3>
+            <p data-en="Application of artificial intelligence methods and recognition problems."
+              data-az="Süni intellekt metodlarının tətbiqi və tanınma məsələləri.">Application of artificial
+              intelligence methods and recognition problems.</p>
+          </article>
+          <article><span>04</span>
+            <h3>Intelligent Information Processing</h3>
+            <p data-en="Intelligent fusion of multi-source information and information systems."
+              data-az="Çoxmənbəli informasiyanın intellektual birləşdirilməsi və informasiya sistemləri.">Intelligent
+              fusion of multi-source information and information systems.</p>
+          </article>
+        </div>
+        <div class="thesis"><span>DOCTORAL RESEARCH</span>
+          <p>“Models and Methods of the Design of Distributed Knowledge-Based Fuzzy Neural Networks”</p><small>Doctor of
+            Sciences dissertation · defended 2015 · Azerbaijan Technical University</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="career">
+      <div class="section-heading">
+        <p class="eyebrow">03 / ACADEMIC JOURNEY</p>
+        <h2 data-en="Academic career & education" data-az="Akademik fəaliyyət və təhsil">Academic career & education
+        </h2>
+      </div>
+      <div class="timeline">
+        <article><time>2022—present</time>
+          <div>
+            <h3>Azerbaijan State University of Economics (UNEC)</h3>
+            <p>Department of Digital Technologies and Applied Informatics</p>
+          </div>
         </article>
-        <article class="feature-card" id="research">
-          <div class="card-icon" aria-hidden="true">⌘</div>
-          <h2 data-en="Research" data-az="Tədqiqatlar">Research</h2>
-          <p data-en="Artificial intelligence, intelligent systems, fuzzy methods, and information recognition." data-az="Süni intellekt, intellektual sistemlər, qeyri-səlis metodlar və informasiyanın tanınması.">Artificial intelligence, intelligent systems, fuzzy methods, and information recognition.</p>
-          <a href="#publications" class="text-link" data-en="Explore topics ↗" data-az="İstiqamətlər ↗">Explore topics ↗</a>
+        <article><time>2021</time>
+          <div>
+            <h3>President, Fuzzy System Association in Azerbaijan (FSAA)</h3>
+            <p>Azerbaijan National Academy of Sciences, Institute of Control Systems</p>
+          </div>
         </article>
-        <article class="feature-card" id="publications">
-          <div class="card-icon" aria-hidden="true">▤</div>
-          <h2 data-en="Publications" data-az="Elmi nəşrlər">Publications</h2>
-          <p data-en="Selected academic papers and links to official publication records." data-az="Seçilmiş elmi məqalələr və rəsmi nəşr qeydlərinə keçidlər.">Selected academic papers and links to official publication records.</p>
-          <a href="https://avesis.unec.edu.az/shahnaz_shahbazova" target="_blank" rel="noreferrer" class="text-link" data-en="View academic profile ↗" data-az="Akademik profil ↗">View academic profile ↗</a>
+        <article><time>2017</time>
+          <div>
+            <h3>Professor</h3>
+            <p>Department of Information Technology and Programming, Azerbaijan Technical University</p>
+          </div>
         </article>
-        <article class="feature-card" id="teaching">
-          <div class="card-icon" aria-hidden="true">⌂</div>
-          <h2 data-en="Teaching" data-az="Tədris">Teaching</h2>
-          <p data-en="Courses, teaching approach, and learning resources will be added after confirmation." data-az="Fənlər, tədris yanaşması və tədris materialları təsdiqdən sonra əlavə olunacaq.">Courses, teaching approach, and learning resources will be added after confirmation.</p>
-          <a href="#contact" class="text-link" data-en="Teaching information ↗" data-az="Tədris məlumatları ↗">Teaching information ↗</a>
+        <article><time>2014</time>
+          <div>
+            <h3>Vice-President</h3>
+            <p>International Academy of Sciences named after Professor Lotfi A. Zadeh</p>
+          </div>
         </article>
-        <article class="feature-card" id="contact">
-          <div class="card-icon" aria-hidden="true">✉</div>
-          <h2 data-en="Contact" data-az="Əlaqə">Contact</h2>
-          <p data-en="For academic questions, collaboration, or professional enquiries." data-az="Elmi suallar, əməkdaşlıq və peşəkar müraciətlər üçün.">For academic questions, collaboration, or professional enquiries.</p>
-          <a href="https://avesis.unec.edu.az/shahnaz_shahbazova" target="_blank" rel="noreferrer" class="text-link" data-en="Find official contact ↗" data-az="Rəsmi əlaqə məlumatları ↗">Find official contact ↗</a>
+        <article><time>2011—present</time>
+          <div>
+            <h3>General Chair & Organiser</h3>
+            <p>World Conference on Soft Computing (WConSC)</p>
+          </div>
         </article>
+        <article><time>1995</time>
+          <div>
+            <h3>PhD in Engineering Sciences</h3>
+            <p>Azerbaijan Technical University</p>
+          </div>
+        </article>
+        <article><time>1979</time>
+          <div>
+            <h3>Bachelor’s Degree</h3>
+            <p>Mathematics and Mechanics, Azerbaijan State University</p>
+          </div>
+        </article>
+      </div>
+      <div class="subheading">
+        <h3 data-en="International research experience" data-az="Beynəlxalq elmi tədqiqat təcrübəsi">International
+          research experience</h3>
+        <p data-en="Selected visiting scholar and research appointments listed in the CV."
+          data-az="CV-də qeyd olunan seçilmiş elmi ezamiyyətlər və tədqiqat proqramları.">Selected visiting scholar and
+          research appointments listed in the CV.</p>
+      </div>
+      <div class="visit-grid">
+        <div><b>University of California, Berkeley</b><span>2007–2008 · Fulbright programme</span><span>2011–2013,
+            2015–2018 · Visiting Scholar appointments</span></div>
+        <div><b>University of Texas at El Paso</b><span>2024 · Visiting Scholar, 3-month research stay</span></div>
+        <div><b>University of Siegen, Germany</b><span>1999, 2003, 2010 · DAAD programme research stays</span></div>
+      </div>
+    </section>
+
+    <section class="section shaded" id="publications">
+      <div class="wrap">
+        <div class="section-heading">
+          <p class="eyebrow">04 / SCHOLARLY WORK</p>
+          <h2 data-en="Books & publications" data-az="Kitablar və elmi nəşrlər">Books & publications</h2>
+          <p class="section-intro"
+            data-en="A selection of edited volumes listed in the supplied CV. Individual journal articles will be added when provided."
+            data-az="Təqdim edilmiş CV-də göstərilən redaktə olunmuş kitablardan seçmə. Ayrı-ayrı jurnal məqalələri göndərildikdən sonra əlavə olunacaq.">
+            A selection of edited volumes listed in the supplied CV. Individual journal articles will be added when
+            provided.</p>
+        </div>
+        <div class="book-list">
+          <article><time>2026</time>
+            <div>
+              <h3>Advances in Intelligent Systems and Computing: Soft Computing Applications</h3>
+              <p>Vol. 1 & Vol. 2 · Springer series</p>
+            </div><span class="tag">Co-editor</span>
+          </article>
+          <article><time>2022</time>
+            <div>
+              <h3>Recent Developments and New Directions in Soft Computing: Foundations and Applications</h3>
+              <p>Vol. 1 & Vol. 2 · Studies in Fuzziness and Soft Computing</p>
+            </div><span class="tag">Co-editor</span>
+          </article>
+          <article><time>2020</time>
+            <div>
+              <h3>Recent Developments in Fuzzy Logic and Fuzzy Sets</h3>
+              <p>Studies in Fuzziness and Soft Computing</p>
+            </div><span class="tag">Co-editor</span>
+          </article>
+          <article><time>2020</time>
+            <div>
+              <h3>Soft Computing Applications</h3>
+              <p>Vol. 1 & Vol. 2 · Advances in Intelligent Systems and Computing</p>
+            </div><span class="tag">Co-editor</span>
+          </article>
+          <article><time>2018</time>
+            <div>
+              <h3>Recent Developments and New Directions in Soft Computing: Foundations and Applications</h3>
+              <p>Studies in Fuzziness and Soft Computing</p>
+            </div><span class="tag">Co-editor</span>
+          </article>
+          <article><time>2014</time>
+            <div>
+              <h3>Recent Developments and New Directions in Soft Computing</h3>
+              <p>Studies in Fuzziness and Soft Computing</p>
+            </div><span class="tag">Co-editor</span>
+          </article>
+          <article><time>2013</time>
+            <div>
+              <h3>Soft Computing: State of the Art Theory and Novel Applications</h3>
+              <p>Studies in Fuzziness and Soft Computing</p>
+            </div><span class="tag">Co-editor</span>
+          </article>
+        </div>
+        <div class="publication-note"><b>Publication record</b>
+          <p>282 scientific articles · 12 method manuals · 8 manuals · 3 monographs · 12 Springer publication books (as
+            stated in the supplied CV).</p>
+          <p class="pending">Journal articles, DOI links, abstracts and downloadable PDFs: awaiting the publication list
+            from the author.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="service">
+      <div class="section-heading">
+        <p class="eyebrow">05 / COMMUNITY</p>
+        <h2 data-en="Academic service & recognition" data-az="Elmi fəaliyyət və təltiflər">Academic service &
+          recognition</h2>
+      </div>
+      <div class="service-grid">
+        <div class="service-card">
+          <h3>International service</h3>
+          <ul>
+            <li>General Chair, World Conference on Soft Computing (since 2011)</li>
+            <li>Program Committee member for 30+ international conferences</li>
+            <li>Reviewer for nearly 40 international journals</li>
+            <li>Board of Directors, North American Fuzzy Information Processing Society (NAFIPS)</li>
+            <li>Senior Member, IEEE and IEEE Computational Intelligence Society</li>
+            <li>Member, Berkeley Initiative in Soft Computing (BISC), UC Berkeley</li>
+          </ul>
+        </div>
+        <div class="service-card">
+          <h3>Editorial memberships</h3>
+          <ul>
+            <li>Acta Polytechnica Hungarica</li>
+            <li>International Journal of Advanced Intelligence Paradigms</li>
+            <li>Journal of Problems of Information Technology</li>
+          </ul>
+          <h3 class="honours-title">Honours</h3>
+          <ul>
+            <li>2018 · Fellow, Russian Association for Fuzzy Systems and Soft Computing</li>
+            <li>2017 · Honorary Professor, Óbuda University, Hungary</li>
+            <li>2017 · Honorary Professor, Aurel Vlaicu University of Arad, Romania</li>
+            <li>2000 · Honorary Doctorate, International Personnel Academy, UNESCO</li>
+          </ul>
+        </div>
+      </div>
+      <div class="subheading">
+        <h3>Selected projects</h3>
+      </div>
+      <div class="project-grid">
+        <article><time>2014–2015</time>
+          <h3>Intelligent fusion of multi-source information in the social network model based on fuzzy sets</h3>
+          <p>Baku, Azerbaijan</p>
+        </article>
+        <article><time>2011</time>
+          <h3>Establishment of Educational Network System of Azerbaijan Technical University</h3>
+          <p>Korea · KOICA</p>
+        </article>
+        <article><time>2009</time>
+          <h3>Information-communication Technologies and Higher Education</h3>
+          <p>Saint Petersburg</p>
+        </article>
+        <article><time>2001</time>
+          <h3>Application of ICT in educational environments</h3>
+          <p>Indiana, USA</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="wrap contact-inner">
+        <div>
+          <p class="eyebrow">06 / GET IN TOUCH</p>
+          <h2 data-en="Academic collaboration & enquiries" data-az="Elmi əməkdaşlıq və müraciətlər">Academic
+            collaboration & enquiries</h2>
+          <p data-en="For research collaboration, conference matters and academic correspondence."
+            data-az="Elmi əməkdaşlıq, konfrans məsələləri və akademik yazışmalar üçün.">For research collaboration,
+            conference matters and academic correspondence.</p>
+        </div>
+        <div class="contact-links"><a href="mailto:shahbazova.shahnaz@unec.edu.az">shahbazova.shahnaz@unec.edu.az
+            ↗</a><a href="https://avesis.unec.edu.az/shahnaz_shahbazova" target="_blank" rel="noreferrer">UNEC AVESİS
+            profile ↗</a><span>Baku, Azerbaijan</span></div>
       </div>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <div class="footer-inner section-wrap">
-      <div class="footer-brand">
-        <div class="unec-mark">UNEC</div>
-        <div>
-          <strong data-en="Azerbaijan State University of Economics" data-az="Azərbaycan Dövlət İqtisad Universiteti">Azerbaijan State University of Economics</strong>
-          <p data-en="Faculty of Digital Economy" data-az="Rəqəmsal İqtisadiyyat fakültəsi">Faculty of Digital Economy</p>
-          <p data-en="Department of Digital Technologies and Applied Informatics" data-az="Rəqəmsal texnologiyalar və tətbiqi informatika kafedrası">Department of Digital Technologies and Applied Informatics</p>
-        </div>
-      </div>
-      <div class="footer-contact">
-        <h2 data-en="Academic profile" data-az="Akademik profil">Academic profile</h2>
-        <a href="https://avesis.unec.edu.az/shahnaz_shahbazova" target="_blank" rel="noreferrer">UNEC AVESİS ↗</a>
-        <p data-en="Baku, Azerbaijan" data-az="Bakı, Azərbaycan">Baku, Azerbaijan</p>
-      </div>
-    </div>
-    <div class="copyright" data-en="Concept website for review · Not an official UNEC website" data-az="Baxış üçün hazırlanmış konsept sayt · Rəsmi UNEC saytı deyil">Concept website for review · Not an official UNEC website</div>
+  <footer>
+    <div class="wrap foot"><span>Shahnaz N. Shahbazova</span><span>Azerbaijan State University of Economics ·
+        UNEC</span></div>
+    <p class="disclaimer">Academic portfolio concept · Content based on the CV supplied for this draft. To be reviewed
+      and approved before publication.</p>
   </footer>
   <script src="script.js"></script>
 </body>
+
 </html>
