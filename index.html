@@ -7,90 +7,85 @@
 <meta name="description" content="Professor of Information Technology, Fuzzy Systems and Soft Computing — Baku, Azerbaijan">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:wght@400;500;600&display=swap&subset=latin,latin-ext,cyrillic" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <a class="skip" href="#main" data-i18n="skip"></a>
-<header class="top">
-  <a class="brand" href="#top">Sh. N. Shahbazova</a>
-  <nav id="nav" aria-label="Main">
-    <a href="#about" data-i18n="nav_about"></a>
-    <a href="#education" data-i18n="nav_edu"></a>
-    <a href="#experience" data-i18n="nav_exp"></a>
-    <a href="#research" data-i18n="nav_research"></a>
-    <a href="#publications" data-i18n="nav_pubs"></a>
-    <a href="#service" data-i18n="nav_service"></a>
-    <a href="#contact" data-i18n="nav_contact"></a>
-  </nav>
-  <div class="lang" role="group" aria-label="Language">
-    <button data-lang="az">AZ</button><button data-lang="en">EN</button><button data-lang="ru">RU</button>
-  </div>
-</header>
-
-<main id="main">
-<section class="hero" id="top">
-  <svg class="curve" viewBox="0 0 800 300" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0 290 L180 290 L300 40 L500 40 L620 290 L800 290" />
-    <path d="M120 290 L330 290 L440 120 L550 290" />
-    <path d="M400 290 L640 290 L720 60 L800 60" />
-  </svg>
-  <div class="wrap hero-grid">
-    <img class="portrait" src="assets/sahnazmphoto.jpeg" alt="Prof. Shahnaz N. Shahbazova" width="340" height="340">
-    <div>
+<header class="masthead">
+  <div class="lang" role="group" aria-label="Language"><button data-lang="az">AZ</button><button data-lang="en">EN</button><button data-lang="ru">RU</button></div>
+  <div class="wrap mast">
+    <img class="portrait" src="assets/photo.png" alt="Prof. Shahnaz N. Shahbazova" width="170" height="170">
+    <div class="id">
       <h1>Shahnaz N. Shahbazova</h1>
       <p class="role" data-i18n="hero_role"></p>
       <p class="aff" data-i18n="hero_aff"></p>
-      <p class="lead" data-i18n="hero_lead"></p>
-      <p class="cta"><a class="btn" href="#publications" data-i18n="cta_pubs"></a><a class="btn ghost" href="#contact" data-i18n="cta_contact"></a></p>
     </div>
+    <address class="card">
+      <span data-i18n="nav_contact"></span>
+      <a href="mailto:shahbazova.shahnaz@unec.edu.az">shahbazova.shahnaz@unec.edu.az</a>
+      <span data-i18n="location"></span>
+    </address>
+  </div>
+</header>
+<nav id="nav" aria-label="Main"><div class="wrap">
+  <a href="#home" data-i18n="nav_home"></a><a href="#publications" data-i18n="nav_pubs"></a><a href="#research" data-i18n="nav_research"></a>
+  <a href="#experience" data-i18n="nav_exp"></a><a href="#awards" data-i18n="nav_awards"></a><a href="#contact" data-i18n="nav_contact"></a>
+</div></nav>
+
+<main id="main" class="wrap">
+<section class="view" id="home">
+  <div class="home">
+    <div class="bio">
+      <p id="about-text" class="big"></p>
+      <p data-i18n="hero_lead"></p>
+      <dl class="facts" id="facts"></dl>
+    </div>
+    <aside>
+      <blockquote><p id="qtext"></p><footer data-i18n="quote_by"></footer></blockquote>
+      <h3 data-i18n="events"></h3><ul class="side" id="events"></ul>
+      <h3 data-i18n="links"></h3><ul class="side" id="links"></ul>
+    </aside>
   </div>
 </section>
 
-<section id="about"><div class="wrap">
-  <h2 data-i18n="nav_about"></h2>
-  <div class="two"><p id="about-text"></p><dl class="facts" id="facts"></dl></div>
-</div></section>
+<section class="view" id="publications" hidden>
+  <h2 data-i18n="nav_pubs"></h2>
+  <p class="note" data-i18n="pub_intro"></p>
+  <div id="pubctl" class="ctl"></div>
+  <p class="note" id="pubshown" aria-live="polite"></p>
+  <div id="publist"></div>
+</section>
 
-<section id="education" class="tint"><div class="wrap">
-  <h2 data-i18n="nav_edu"></h2><ol class="timeline" id="edu"></ol>
-  <h3 data-i18n="honors"></h3><ol class="timeline" id="honors"></ol>
-</div></section>
-
-<section id="experience"><div class="wrap">
-  <h2 data-i18n="nav_exp"></h2><ol class="timeline" id="exp"></ol>
-</div></section>
-
-<section id="research" class="tint"><div class="wrap">
+<section class="view" id="research" hidden>
   <h2 data-i18n="nav_research"></h2>
   <p class="note" data-i18n="research_note"></p>
   <div class="tablewrap"><table id="visits"></table></div>
-</div></section>
+</section>
 
-<section id="publications"><div class="wrap">
-  <h2 data-i18n="nav_pubs"></h2>
-  <p class="note" id="pubcount"></p>
-  <h3 data-i18n="articles"></h3><ul class="list" id="articles"></ul>
-  <h3 data-i18n="books"></h3><ul class="list" id="books"></ul>
-</div></section>
+<section class="view" id="experience" hidden>
+  <h2 data-i18n="nav_exp"></h2><ol class="timeline" id="exp"></ol>
+  <h3 data-i18n="nav_edu"></h3><ol class="timeline" id="edu"></ol>
+</section>
 
-<section id="service" class="tint"><div class="wrap">
-  <h2 data-i18n="nav_service"></h2>
+<section class="view" id="awards" hidden>
+  <h2 data-i18n="nav_awards"></h2>
+  <h3 data-i18n="honors"></h3><ol class="timeline" id="honors"></ol>
   <div class="two">
     <div><h3 data-i18n="memberships"></h3><ul class="list" id="members"></ul></div>
-    <div><h3 data-i18n="projects"></h3><ul class="list" id="projects"></ul>
-      <h3 data-i18n="skills"></h3><p id="skills"></p></div>
+    <div><h3 data-i18n="projects"></h3><ul class="list" id="projects"></ul><h3 data-i18n="skills"></h3><p id="skills"></p></div>
   </div>
-</div></section>
+</section>
 
-<section id="contact"><div class="wrap">
+<section class="view" id="contact" hidden>
   <h2 data-i18n="nav_contact"></h2>
   <p data-i18n="contact_text"></p>
   <p class="mail"><a href="mailto:shahbazova.shahnaz@unec.edu.az">shahbazova.shahnaz@unec.edu.az</a><br><a href="mailto:shahbazova@gmail.com">shahbazova@gmail.com</a></p>
   <p class="note" data-i18n="location"></p>
-</div></section>
+</section>
 </main>
 <footer><div class="wrap">© <span id="yr"></span> Shahnaz N. Shahbazova</div></footer>
+<script src="publications.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

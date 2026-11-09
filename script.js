@@ -75,19 +75,6 @@ const VISITS = [
   ["2003", "University of Siegen, Germany", 3, "DAAD"],
   ["1999", "University of Siegen, Germany", 3, "DAAD"],
 ];
-/* Add articles here: {year, title, venue, url} — url optional */
-const ARTICLES = [];
-
-const BOOKS = [
-  "Soft Computing: State of the Art Theory and Novel Applications — Springer, 2013",
-  "Recent Developments and New Directions in Soft Computing — Springer, 2014",
-  "Recent Developments and New Directions in Soft Computing Foundations and Applications — Springer, 2018",
-  "Recent Developments in Fuzzy Logic and Fuzzy Sets — Springer, 2020",
-  "Recent Developments and New Directions in Soft Computing Foundations and Applications — Springer, 2020",
-  "Soft Computing Applications, Vol. 1 and 2 — Advances in Intelligent Systems and Computing, 2020",
-  "Recent Developments and New Directions in Soft Computing Foundations and Applications, Vol. 1 and 2 — Springer, 2022",
-  "Soft Computing Applications, Vol. 1 and 2 — Advances in Intelligent Systems and Computing, Springer, 2026",
-];
 const MEMBERS = [
   L("NAFIPS (Şimali Amerika Fuzzy İnformasiya Emalı Cəmiyyəti) İdarə Heyətinin üzvü", "Board of Directors, North American Fuzzy Information Processing Society (NAFIPS)", "Член правления NAFIPS (Североамериканское общество нечёткой обработки информации)"),
   L("Berkeley Soft Computing Təşəbbüsü (BISC) qrupunun üzvü", "Member, Berkeley Initiative in Soft Computing (BISC), UC Berkeley", "Член группы BISC (Berkeley Initiative in Soft Computing), UC Berkeley"),
@@ -103,48 +90,90 @@ const PROJECTS = [
   ["2001", L("Təhsil mühitində İKT-nin tətbiqi (İndiana, ABŞ)", "Application of ICT in educational environments (Indiana, USA)", "Применение ИКТ в образовательной среде (Индиана, США)")],
 ];
 const SKILLS = "C, C++, Java, JavaScript, HTML, CSS, XML, Perl, PHP, MySQL, SQL, Python, Oracle";
+
+Object.assign(UI, {
+  nav_home: L("Ana səhifə","Home","Главная"), nav_awards: L("Mükafatlar və üzvlüklər","Awards & Service","Награды и членство"),
+  quote: L("Mürəkkəblik artdıqca dəqiq ifadələr mənasını itirir, mənalı ifadələr isə dəqiqliyini.","As complexity rises, precise statements lose meaning and meaningful statements lose precision.","С ростом сложности точные утверждения теряют смысл, а осмысленные — точность."),
+  quote_by: L("Lütfi A. Zadə","Lotfi A. Zadeh","Лотфи А. Заде"),
+  events: L("Gələcək tədbirlər","Upcoming events","Предстоящие события"),
+  events_empty: L("Tarixlər tezliklə əlavə olunacaq.","Dates will be added soon.","Даты будут добавлены.") ,
+  links: L("Faydalı keçidlər","Useful links","Полезные ссылки"),
+  search_ph: L("Başlıq, müəllif, jurnal üzrə axtar…","Search title, author, venue…","Поиск по названию, автору, изданию…"),
+  all: L("Hamısı","All","Все"), year_all: L("Bütün illər","All years","Все годы"),
+  t_journal: L("Jurnal məqalələri","Journal papers","Статьи в журналах"), t_conference: L("Konfrans məqalələri","Conference papers","Доклады конференций"),
+  t_chapter: L("Kitab fəsilləri","Book chapters","Главы книг"), t_book: L("Redaktə etdiyi kitablar","Edited books","Редактированные книги"),
+  t_monograph: L("Monoqrafiyalar","Monographs","Монографии"), t_manual: L("Dərslik və vəsaitlər","Manuals","Пособия"),
+  showing: L("göstərilir","shown","показано"), of: L("/","of","из"),
+  none: L("Heç nə tapılmadı.","Nothing found.","Ничего не найдено."),
+  pub_intro: L("282 elmi məqalə, 3 monoqrafiya, 12 Springer kitabı, 8 dərslik və 12 metodik vəsait.","282 scientific articles, 3 monographs, 12 Springer books, 8 manuals and 12 method manuals.","282 научные статьи, 3 монографии, 12 книг Springer, 8 пособий и 12 методических указаний."),
+  more: L("Siyahı tamamlanır — yeni nəşrlər əlavə olunur.","The list is being completed; new items are added regularly.","Список пополняется."),
+});
+const EVENTS = [ L("Soft Computing üzrə Dünya Konfransı (WConSC) — tarix və yer elan olunacaq","World Conference on Soft Computing (WConSC) — date and venue to be announced","Всемирная конференция по мягким вычислениям (WConSC) — дата и место уточняются") ];
+const LINKS = [["IEEE Computational Intelligence Society","https://cis.ieee.org"],["UNEC","https://unec.edu.az"],["Azerbaijan Technical University","https://aztu.edu.az"]];
 /* ===== END CONTENT ===== */
 
+const TYPES = ["journal","conference","chapter","book","monograph","manual"];
+const VIEWS = ["home","publications","research","experience","awards","contact"];
 const $ = (s) => document.querySelector(s);
-let lang = "az";
-try { lang = localStorage.getItem("lang") || ""; } catch (e) {}
+const esc = (s) => s.replace(/[&<>"]/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let lang = "az"; try { lang = localStorage.getItem("lang") || ""; } catch (e) {}
 if (!UI.nav_about[lang]) lang = (navigator.language || "az").slice(0, 2);
 if (!UI.nav_about[lang]) lang = "az";
+const f = { q: "", t: "all", y: "all" };
+const ALL = TYPES.flatMap((t) => (PUBS[t] || []).map((s) => { const [txt, url] = s.split(" | ");
+  return { t, txt, url, y: (txt.match(/\b(?:19|20)\d{2}\b/g) || []).pop() || "" }; }));
 
-const tl = (id, rows) => {
-  $(id).innerHTML = rows.map(([y, a, b]) => {
-    const t = (v) => (v && v[lang]) || v || "";
-    return `<li><time>${y}</time><div>${t(a)}${t(b) ? `<small>${t(b)}</small>` : ""}</div></li>`;
-  }).join("");
-};
+const tl = (id, rows) => { const t = (v) => (v && v[lang]) || v || "";
+  $(id).innerHTML = rows.map(([y, a, b]) => `<li><time>${y}</time><div>${t(a)}${t(b) ? `<small>${t(b)}</small>` : ""}</div></li>`).join(""); };
+
+function pubList() {
+  const q = f.q.toLowerCase();
+  const rows = ALL.filter((p) => (f.t === "all" || p.t === f.t) && (f.y === "all" || p.y === f.y) && (!q || p.txt.toLowerCase().includes(q)))
+    .sort((a, b) => (b.y || "0").localeCompare(a.y || "0"));
+  let out = "", cur = null;
+  rows.forEach((p) => { if (p.y !== cur) { cur = p.y; out += `<h3 class="yr">${cur || "—"}</h3>`; }
+    const txt = esc(p.txt).replace(/(Sh(?:ahnaz)?\.? ?N\.? ?)?Shahbazova/g, "<b>$&</b>");
+    out += `<p class="pub"><span class="tag">${UI["t_" + p.t][lang]}</span>${p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">${txt}</a>` : txt}</p>`; });
+  $("#publist").innerHTML = out || `<p class="note">${ALL.length ? UI.none[lang] : UI.more[lang]}</p>`;
+  $("#pubshown").textContent = `${rows.length} ${UI.of[lang]} ${ALL.length} ${UI.showing[lang]}`;
+}
+function pubCtl() {
+  const years = [...new Set(ALL.map((p) => p.y).filter(Boolean))].sort().reverse();
+  const n = (t) => ALL.filter((p) => p.t === t).length;
+  $("#pubctl").innerHTML = `<input id="q" type="search" placeholder="${UI.search_ph[lang]}" value="${esc(f.q)}" aria-label="${UI.search_ph[lang]}">
+    <select id="ysel" aria-label="${UI.year_all[lang]}"><option value="all">${UI.year_all[lang]}</option>${years.map((y) => `<option ${y === f.y ? "selected" : ""}>${y}</option>`).join("")}</select>
+    <div class="chips">${["all", ...TYPES].map((t) => `<button data-t="${t}" aria-pressed="${f.t === t}">${t === "all" ? UI.all[lang] : UI["t_" + t][lang]} <i>${t === "all" ? ALL.length : n(t)}</i></button>`).join("")}</div>`;
+}
 
 function render() {
   document.documentElement.lang = lang;
   document.querySelectorAll("[data-i18n]").forEach((el) => (el.textContent = UI[el.dataset.i18n][lang]));
   document.querySelectorAll(".lang button").forEach((b) => b.setAttribute("aria-pressed", b.dataset.lang === lang));
   $("#about-text").textContent = UI.about[lang];
-  $("#facts").innerHTML = [["282", "f_articles"], ["3", "f_mono"], ["12", "f_springer"], ["20", "f_manuals"]]
-    .map(([n, k]) => `<div><dt>${UI[k][lang]}</dt><dd>${n}</dd></div>`).join("");
+  $("#facts").innerHTML = [["282","f_articles"],["3","f_mono"],["12","f_springer"],["20","f_manuals"]].map(([n,k]) => `<div><dt>${UI[k][lang]}</dt><dd>${n}</dd></div>`).join("");
+  $("#qtext").textContent = "“" + UI.quote[lang] + "”";
+  $("#events").innerHTML = EVENTS.map((e) => `<li>${e[lang]}</li>`).join("");
+  $("#links").innerHTML = LINKS.map(([n, u]) => `<li><a href="${u}" target="_blank" rel="noopener">${n}</a></li>`).join("");
   tl("#edu", EDU); tl("#honors", HONORS); tl("#exp", EXP);
   $("#visits").innerHTML = `<thead><tr><th>${UI.th_year[lang]}</th><th>${UI.th_place[lang]}</th><th>${UI.th_dur[lang]}</th><th>${UI.th_prog[lang]}</th></tr></thead><tbody>` +
-    VISITS.map(([y, p, m, g]) => `<tr><td>${y}</td><td>${p}</td><td>${m} ${UI.months[lang]}</td><td>${g}</td></tr>`).join("") + "</tbody>";
-  $("#pubcount").textContent = { az: "282 elmi məqalə, 3 monoqrafiya, 12 Springer kitabı, 8 dərslik və 12 metodik vəsait.", en: "282 scientific articles, 3 monographs, 12 Springer books, 8 manuals and 12 method manuals.", ru: "282 научные статьи, 3 монографии, 12 книг Springer, 8 учебных пособий и 12 методических указаний." }[lang];
-  $("#articles").innerHTML = ARTICLES.length
-    ? ARTICLES.map((a) => `<li>${a.year} — ${a.url ? `<a href="${a.url}" target="_blank" rel="noopener">${a.title}</a>` : a.title}${a.venue ? `. <em>${a.venue}</em>` : ""}</li>`).join("")
-    : `<li class="empty">${UI.articles_empty[lang]}</li>`;
-  $("#books").innerHTML = BOOKS.map((b) => `<li>${b}</li>`).join("");
+    VISITS.map(([y,p,m,g]) => `<tr><td>${y}</td><td>${p}</td><td>${m} ${UI.months[lang]}</td><td>${g}</td></tr>`).join("") + "</tbody>";
   $("#members").innerHTML = MEMBERS.map((m) => `<li>${m[lang]}</li>`).join("");
   $("#projects").innerHTML = PROJECTS.map(([y, t]) => `<li><strong>${y}</strong> — ${t[lang]}</li>`).join("");
   $("#skills").textContent = SKILLS;
+  pubCtl(); pubList();
 }
 
-document.querySelectorAll(".lang button").forEach((b) =>
-  b.addEventListener("click", () => { lang = b.dataset.lang; try { localStorage.setItem("lang", lang); } catch (e) {} render(); }));
+function route() {
+  const id = VIEWS.includes(location.hash.slice(1)) ? location.hash.slice(1) : "home";
+  document.querySelectorAll(".view").forEach((v) => (v.hidden = v.id !== id));
+  document.querySelectorAll("#nav a").forEach((a) => a.getAttribute("href") === "#" + id ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current"));
+  window.scrollTo(0, 0);
+}
+document.querySelectorAll(".lang button").forEach((b) => b.addEventListener("click", () => { lang = b.dataset.lang; try { localStorage.setItem("lang", lang); } catch (e) {} render(); }));
+$("#pubctl").addEventListener("input", (e) => { if (e.target.id === "q") { f.q = e.target.value; pubList(); } });
+$("#pubctl").addEventListener("change", (e) => { if (e.target.id === "ysel") { f.y = e.target.value; pubList(); } });
+$("#pubctl").addEventListener("click", (e) => { const b = e.target.closest("[data-t]"); if (!b) return; f.t = b.dataset.t;
+  $("#pubctl").querySelectorAll("[data-t]").forEach((x) => x.setAttribute("aria-pressed", x === b)); pubList(); });
 $("#yr").textContent = new Date().getFullYear();
-
-const links = [...document.querySelectorAll("#nav a")];
-const io = new IntersectionObserver((es) => es.forEach((e) => {
-  if (e.isIntersecting) links.forEach((a) => a.classList.toggle("on", a.getAttribute("href") === "#" + e.target.id));
-}), { rootMargin: "-40% 0px -55% 0px" });
-document.querySelectorAll("main section[id]").forEach((s) => io.observe(s));
-render();
+window.addEventListener("hashchange", route);
+render(); route();
