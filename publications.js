@@ -51,6 +51,7 @@ const PUBS = {
   chapter: [
     "O Lerma, O Kosheleva, S Shahbazova, V Kreinovich, Towards designing optimal individualized placement tests, Uncertainty Quantification and Uncertainty Propagation under Traditional and, 2026",
     "SN Shahbazova, Obtaining Visual and Audio Information Based on Artificial Intelligence, Recent Advances in Intelligent Engineering: Volume Dedicated to Imre J, 2024",
+    "SN Shahbazova, Prepocessing of Visual and Audio Information Based on a Fuzzy Network, 2024",
     "C Servin, V Kreinovich, SN Shahbazova, Ethical dilemma of self-driving cars: conservative solution, Recent Developments and the New Directions of Research, Foundations, and, 2023",
     "SN Shahbazova, D Ekmekci, Tuning of fuzzy control systems by artificial bee colony with dynamic parameter values algorithm for traction power system, Recent Developments and the New Directions of Research, Foundations, and, 2023",
     "N Avila, J Urenda, N Gordillo, V Kreinovich, SN Shahbazova, Scale-Invariance-Based Pre-processing Drastically Improves Neural Network Learning: Case Study of Diagnosing Lung Dysfunction in Children, Recent Developments and the New Directions of Research, Foundations, and, 2023",
@@ -64,6 +65,7 @@ const PUBS = {
     "SN Shahbazova, IG Mamedov, On One Boundary-value Problem in a Non-Classical Treatment for the Mangeron Equation, Recent Developments and the New Directions of Research, Foundations, and, 2023",
     "O Kosheleva, V Kreinovich, SN Shahbazova, Which Are the Correct Membership Functions? Correct “And”-and “Or”-Operations? Correct Defuzzification Procedure?, Recent Developments and the New Directions of Research, Foundations, and, 2023",
     "SN Shahbazova, IG Mamedov, On One Boundary-value Problem, Recent Developments and the New Directions of Research, Foundations, and, 2023",
+    "JC Urenda, O Kosheleva, S Shahbazova, V Kreinovich, What is the uncertainty of the result of data processing: Fuzzy analogue of the central limit theorem, 2021",
     "V Kreinovich, O Kosheleva, SN Shahbazova, Why triangular and trapezoid membership functions: A simple explanation, Recent developments in fuzzy logic and fuzzy sets: dedicated to Lotfi A, 2020",
     "O Kosheleva, V Kreinovich, S Shahbazova, Type-2 fuzzy analysis explains ubiquity of triangular and trapezoid membership functions, Recent Developments and the New Direction in Soft-Computing Foundations and, 2020",
     "V Kreinovich, O Kosheleva, S Shahbazova, Which t-norm is most appropriate for Bellman-Zadeh optimization, Recent Developments and the New Direction in Soft-Computing Foundations and, 2020",
@@ -82,6 +84,10 @@ const PUBS = {
     "AM Abbasov, SN Shahbazova, Model of the applicability of expert system based on neural networks technology and hybrid systems for decision making, Recent Developments and New Directions in Soft Computing, 3-18, 2014",
     "SN Shahbazova, Creation the model of educational and methodical support based on fuzzy logic, Recent Developments and New Directions in Soft Computing, 317-330, 2014",
     "SN Shahbazova, Applied research in the field of automation of learning and knowledge control, Soft Computing: State of the Art Theory and Novel Applications, 223-240, 2013",
+    "SN Shahbazova, A Mosavi, KS Rahim, FS Yaqub, Big data in healthcare: Privacy and Security issues",
+    "O Kosheleva, SN Shahbazova, H Sevil, IRM Iskender, Data privacy in the age of Big Data: Opportunities and Challenges",
+    "S SHAHBAZOVA, N ALIYEVA, Data mining on base of artificial intelligence",
+    "S SHAHBAZOVA, A RZAYEV, Intellectual information systems on the base of fuzzy neural networks",
   ],
   book: [
     "Sh. N. Shahbazova (co-editor), Soft Computing Applications, Vol. 1 and 2, Springer, Advances in Intelligent Systems and Computing, 2026",
