@@ -132,7 +132,7 @@ function pubList() {
     .sort((a, b) => (b.y || "0").localeCompare(a.y || "0"));
   let out = "", cur = null;
   rows.forEach((p) => { if (p.y !== cur) { cur = p.y; out += `<h3 class="yr">${cur || "—"}</h3>`; }
-    const txt = esc(p.txt).replace(/(Sh(?:ahnaz)?\.? ?N\.? ?)?Shahbazova/g, "<b>$&</b>");
+    const txt = esc(p.txt).replace(/(?:S(?:h(?:ahnaz)?)?\.? ?N\.? ?)?Shahbazova/gi, "<b>$&</b>");
     out += `<p class="pub"><span class="tag">${UI["t_" + p.t][lang]}</span>${p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">${txt}</a>` : txt}</p>`; });
   $("#publist").innerHTML = out || `<p class="note">${ALL.length ? UI.none[lang] : UI.more[lang]}</p>`;
   $("#pubshown").textContent = `${rows.length} ${UI.of[lang]} ${ALL.length} ${UI.showing[lang]}`;
